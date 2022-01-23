@@ -1,28 +1,5 @@
 
 /* General Style*/
-.activeUp{
-    transform: translateY(0) !important;
-    opacity: 1 !important;
-  }
-  .activeLeft{
-    transform: translateX(0) !important;
-    opacity: 1 !important;
-  }
-  .animateLeft{
-    transform: translateX(100px);
-    opacity: 0;
-    transition: 2s all ease;
-  }
-  .animateUp{
-    transform: translateY(100px);
-    opacity: 0;
-    transition: 2s all ease;
-  }
-  .reveal{
-    transform: translateY(100px);
-    opacity: 0;
-    transition: 2s all ease;
-    }
 body{
     font-family: 'Lucida Sans';
 }
@@ -35,9 +12,11 @@ i:hover{
 a{
     text-decoration: none;;
    }
+  
 .sections{
     padding: 20px 0;
 }
+
 .disabeClick{
         pointer-events: none;  
 }
@@ -55,6 +34,10 @@ opacity: 1;
 .reveal.active{
 transform: translateY(0);
 opacity: 1;
+}
+.active-tap{
+    color: #f50 !important; 
+
 }
 
 .swiper-arrow{
@@ -170,9 +153,24 @@ opacity: 1;
         visibility: visible ;
     }
 }
-/*
-@media(min-width:576px) and (max-width:768px)
+
+@media only screen and (max-width:400px)
 {
+    .section-header .section-title{
+        font-size: 10px;
+    
+    }  
+}
+
+@media only screen and (min-width:576px) and (max-width:768px)
+{
+    /*html,body{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }*/
     .section-header p{
         width: 80%;    
     }
@@ -181,8 +179,32 @@ opacity: 1;
     
     }  
 
-}*/
+}
 
+/* animation */
+.activeUp{
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+  }
+.activeLeft{
+transform: translateX(0) !important;
+opacity: 1 !important;
+}
+.animateLeft{
+transform: translateX(100px);
+opacity: 0;
+transition: 2s all ease;
+}
+.animateUp{
+transform: translateY(100px);
+opacity: 0;
+transition: 2s all ease;
+}
+.reveal{
+transform: translateY(100px);
+opacity: 0;
+transition: 2s all ease;
+}
 
 
 /* Header */
@@ -190,34 +212,45 @@ opacity: 1;
 header i.icon{
   position: absolute;
   top:32px;
-  right: 30px;
+  right: 40px;
   cursor: pointer;
+  color: #124460;
   display: none;
-  color: #fff;
+
+}
+header a.search {
+    position: absolute;
+    top:32px;
+    right: 120px;
+    cursor: pointer;
+    color: #124460;
+    display: none;
+  
+  }
+  header a.lang {
+    position: absolute;
+    top:32px;
+    right: 80px;
+    cursor: pointer;
+    color: #124460;
+    display: none;
+  
+  }
+header a.icon img{
+width: 40px;
+height: 40px;
 }
 header .logo img{
     width: 200px;
     height: 80px;
     object-fit: cover;
-    animation: movedown 1.5s linear 1;
-    animation-delay: 1s;
-    visibility: hidden;
-    animation-fill-mode: forwards;
-}
-@keyframes movedown{
-    0%{
-        transform: translateY(-100px);
-        visibility: visible;
-    }
-    100%{
-        transform: translateY(0);
-        visibility: visible;
-    }
+    
 }
 header nav{ 
     padding-left: 5px !important;
     padding-right: 0 !important;
 }
+
 header nav .nav-list{
     list-style: none;
     display: flex;
@@ -229,11 +262,20 @@ header nav .nav-list.secondary{
     margin-bottom: 0px; 
     justify-content: space-around;
     margin: 20px 0;
+    
+}
+.animate-nav{
     animation: moveleft 1s linear 1;
     animation-delay: 2s;
     visibility: hidden;
     animation-fill-mode: forwards;
    
+}
+.animate-logo{
+    animation: movedown 1.5s linear 1;
+    animation-delay: 1s;
+    visibility: hidden;
+    animation-fill-mode: forwards;
 }
 @keyframes moveleft{
     0%{
@@ -259,6 +301,16 @@ header nav .nav-list.secondary{
 
     }
 
+}
+@keyframes movedown{
+    0%{
+        transform: translateY(-100px);
+        visibility: visible;
+    }
+    100%{
+        transform: translateY(0);
+        visibility: visible;
+    }
 }
 .colored{
     background:red !important;
@@ -289,7 +341,7 @@ header nav .nav-list.main .list a{
     letter-spacing: 0.03em;
     text-transform: uppercase;
     display: block;
-    padding: 15px;
+    padding: 10px;
     margin:9px 0;
     color: #124460;
     text-decoration: none;
@@ -307,13 +359,13 @@ header nav .nav-list .secondary .list a{
 }
 header nav .nav-list .list  .home-icon{
     color:#DC5419 !important;
-    margin-left: 8px !important;
+    margin-left: 15px !important;
 }
 header nav .nav-list.main .list i{
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 17px;  
+    top: 12px;  
     left: 45px;   
 }
 
@@ -323,12 +375,15 @@ header nav .nav-list .list a:hover{
 }
 
 header nav .nav-list.secondary .list2.settings img{
-width: 40px;
-height: 40px;
+width: 30px;
+height: 30px;
 }
+header nav .nav-list.secondary .login.list2 img{
+    width: 70px;
+    }
+
 .center-logo{
 text-align: center;
-
 
 }
 .resize-logo{
@@ -340,11 +395,17 @@ left: 50% !important;
 transform: translate(-50%, -50%);
 }
 .header-full{
-    top: 80px;
-    margin-bottom:100px;
+    display: flex !important;
+    text-align: center !important;
 }
-@media(max-width:575px)
+
+@media(max-width:575px) /*media header*/
 {
+ html,body{
+     padding: 0;
+     margin: 0;
+     overflow-x: hidden;
+ }
     header
     {
         background:#fff;
@@ -358,15 +419,56 @@ transform: translate(-50%, -50%);
         padding: 0;
         text-align: center;
     }
-    header i.icon{
+    header nav .nav-list.secondary {
+        display: none;
+        padding: 0;
+        text-align: center;
+        justify-content: center
+        }
+    header i.icon, header a.search, header a.lang{
         display: block;
     }
 
 }
-@media(min-width:580px)  {
 
-    header nav .nav-list.secondary .list2.settings {
-        pointer-events: none;
+@media(min-width:576px) and (max-width:990px){
+
+    header .logo img {
+        width:100px;
+        object-fit: fill;
+    }  
+    header nav .nav-list.main{
+       
+        padding: 0;
+        display: flex;
+        text-align: center;
+    } 
+    header nav .nav-list.secondary {
+        margin: 0;
+    }
+    header nav .nav-list.main .list a{
+        
+        font-weight: bold;
+        font-size: 14px;
+        display: block;
+        padding: 15px;
+        margin:9px 0;
+    }
+    header nav .nav-list.secondary {
+        justify-content: flex-end
+    }
+
+}
+
+@media(min-width:576px)  {
+  
+    html,body{
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    header a.icon {
+        display: none;
     }
     header{
         background: #fff;
@@ -374,8 +476,9 @@ transform: translate(-50%, -50%);
 
 }
 
- /* Extra small devices (phones, 600px and down) */
+ 
  @media only screen and (max-width: 1000px) {
+  
     header nav .nav-list.main .list i {
         position: unset !important;
     }
@@ -406,23 +509,7 @@ transform: translate(-50%, -50%);
     }
  
 }
-@media(max-width:990px){
 
-    header .logo img {
-        width:120px;
-        object-fit: fill;
-    }   
-    header nav .nav-list.main .list a{
-        
-        font-weight: bold;
-        font-size: 14px;
-        display: block;
-        padding: 15px;
-        margin:9px 0;
-}
-
-
-}
 /* services*/
 
 @media(max-width:575px)

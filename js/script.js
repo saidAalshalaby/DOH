@@ -1,5 +1,6 @@
 $(document).ready(function () {
     // animate scroll top icon
+    console.log("screen "+$(window).width());
     setInterval(function () {
         $(".scrollTop").toggleClass('animate-scrollTop');
     }, 5000);

@@ -48,7 +48,10 @@ color:#DC5419
     
    
 }
-.service .service-content .favorite{
+.service .service-content .space{
+    padding: 30px;
+}
+.service .service-content .favorite-bookmark .favorite{
     margin-bottom: 15px;
 } 
 .service .service-container{
@@ -62,32 +65,35 @@ color:#DC5419
 .service-content p,span,h7{
     color:#fff ;
 }
+.service .service-container  .service-content .left  i{
+    color:#FF9466 ;
+}
 
-.service .row >div:nth-child(3) i{
+.service .service-content .favorite-bookmark i{
     color:#fff ;
-    margin: 0 5px;
+    margin-right:  15px;
+}
+
+.service .service-content .right .rate i{
+    color:#fff ;
 }
 
 .service .row >div:nth-child(1) i{
     margin-top: 10px;
 }
 
-.service .row >div:nth-child(1) i{
-    color:#FF9466 ;
-}
+
 .active-star{
     color:#FF9466 !important;
 }
  
 
-.service .row.service-content>div:nth-child(3) span{
-    margin-left: 15px;
-    font-size: 15px;
-}
-
 .service .row .rate{
 border:1px solid #FFFFFF99;
 padding: 20px;
+}
+.service .row .rate i{
+    margin-left: 10px;
 }
 .service .row .rate p{
   color: #FFFFFF99;
@@ -139,18 +145,42 @@ padding: 20px;
 .fa-active{
     color:#DC5419 !important
 }
+.service .service-content hr{
+    display:none
+}
 @media (max-width:575px) {
     
     .service-content p, h3,span  {
        
         font-size: 12px;
      }
+   .inner-container{
+       margin: 0 10px;
+   }
      
      .service-content span  {
         font-size: 12px !important;
 
      }
+}
+@media (min-width:768px) and (max-width:1200px) {
+
+    .service  .service-content .left .row >div:first-child{
+        margin-right: 5px;
+    
+}
+}
+
+    @media (max-width:991px) {
+   
+    .service .service-content hr{
+        
+        display:block
     }
+    .service .row .rate p{
+        margin-left: 10px;
+    }
+}
 
 /*details*/
 .service-details{
@@ -306,21 +336,21 @@ margin-bottom:10px;
     opacity: 1;
   }
   @media (max-width:575px) {
-  .service-details h4  {
-       
-    font-size: 14px;
- }
- .service-details  p {
-   
-    font-size: 12px;
- }
- .procedure-content .progress-bar .progress-step:nth-of-type(1) {
-    margin-bottom: 75px !important;
- }
- .procedure-content .progress-bar::before
- {
-     height: 100%;
- }
+    .service-details h4  {
+        
+        font-size: 14px;
+    }
+    .service-details  p {
+    
+        font-size: 12px;
+    }
+    .procedure-content .progress-bar .progress-step:nth-of-type(1) {
+        margin-bottom: 75px !important;
+    }
+    .procedure-content .progress-bar::before
+    {
+        height: 100%;
+    }
 }
 
 /* service fees*/
@@ -399,9 +429,11 @@ margin-bottom:10px;
     transform: rotate(-270deg);
     color: #fff;
 }
-@media (max-width:575px) {
+@media (max-width:991px) {
     .service-details .fees, .service-details .payments, .service-details .applying-video, .service-details .help{
-        margin-left: 0;
+        margin-left: 0;   
+    }
+    .service-details .fees{
         margin-top: 20px;
     }
 }
@@ -506,8 +538,8 @@ margin-bottom:10px;
     }
     .review .review-content i {
         right: 20%;
-    } .review  hr {
+    } 
+    .review  hr {
         margin-top: 50px;
     }
-    
-}
+} 

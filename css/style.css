@@ -1,5 +1,4 @@
 /* Header */
-
 header {
     height: auto;
     padding: 10px 0;
@@ -20,6 +19,7 @@ header {
     height: 102vh;
     background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0) 100%),url("../assets/images/home/home-cover.jpg");
     background-size: cover;
+    object-fit: fill;
     position: relative;
 }
 
@@ -87,31 +87,6 @@ header {
 
 }
 /* about */
-.about .about-info h3{
-    font-size: 25px;
-    font-weight: normal;
-    margin-bottom: 15px;
-    padding-top: 0;
-}
-.about .about-info h3 span{
-    color: #7cb62f;
-}
-.about .about-info  .about-info-desc{
-    line-height: 1.8;
-    margin-bottom: 15px;
-
-}
-.about .about-info .about-info-btn{
-    background-color: #7cb62f;
-    color: #fff;
-    padding: 10px 20px;
-    font-weight: bold;
-    border: 0;
-    margin-bottom: 15px;
-
-}
-.about .about-image img{
-    width: 100%;
 }
 @media(max-width:575px)
 {
@@ -129,10 +104,8 @@ header {
 }
 /* services */
 .services{
-    background: #E5E5E5;
-     
+    background: #E5E5E5;    
 }
-
 .services .text-search{
   align-self: stretch;
   -webkit-appearance: none;
@@ -155,12 +128,10 @@ header {
     text-align: center;
     height: 180px;
     padding:20px;
-    margin-bottom: 15px;  
-    margin-left: 0;
+    margin-bottom: 20px;  
+ 
     transition:all 0.3s ease-in-out;
 }
-
-
 .serv-animate{
     animation: moveup 1s linear 1;
     visibility: hidden;
@@ -380,13 +351,12 @@ active
 }
 
 .statistics .view-all{
-    min-width: 11.25em;
-    height: 3.75em;
+    width: 50%;
+    position: absolute;
+    left: 25%;
     padding: 1rem;
     background: transparent;
-    margin: 0 35%;
     letter-spacing: .1875em;
- 
     text-align: center;
     border: 1px solid #dddcde;
     color:#fff;
@@ -425,7 +395,9 @@ active
         height: 900px;
     }
     .statistics .view-all {
-        margin: 0 18%;
+       width: 50%;
+       transform: translateX(0%);
+        font-size: 10px;
     }
 
     
@@ -838,6 +810,12 @@ width: 100%;
 
         justify-content: center !important; 
     }
+    .owl-theme .owl-nav.disabled+.owl-dots {
+        margin-right: 50%;
+    }
+    .owl-carousel .owl-stage-outer {
+        -webkit-transform: translate3d(-15%,0,0);
+    }
  
 }
 
@@ -903,10 +881,7 @@ width: 100%;
 .choose .inline-navbar ul li:hover{
     cursor: pointer;
 }
-.active-tap{
-    color: #f50 !important; 
 
-}
 .choose .c_panel ul li {
     padding: 15px 20px;
     cursor: pointer;

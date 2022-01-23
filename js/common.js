@@ -1,17 +1,22 @@
 $(document).ready(function () {
-    let startedService = false;
-    let prevRatio = 0.0;
+     
     /* header responsive */
-    $('.settings').click(function () {
-        $('.nav-list.main').slideToggle();
-        $('header .logo-sec').toggleClass('center-logo');
-        $('.logo-sec img').toggleClass('resize-logo');
-        $('header .logo-sec').toggleClass('col-xs-4 col-xs-12');
+    $('i.icon').click(function () {
+        $('.nav-list.main').slideToggle()
+        $('.nav-list.secondary').slideToggle()
+        $('header .logo-sec').toggleClass('hidden')
+        $('header a.search').toggleClass('hidden')
+        $('header a.lang').toggleClass('hidden')
+        $('header .logo-sec').toggleClass('col-xs-2 col-xs-12')
+        $('.nav-list.secondary').toggleClass('col-xs-12')
         $('.nav-list.main .list i').toggleClass('center-home')
-        $('nav.first').toggleClass('col-xs-12');
-        $('nav.second').toggleClass('col-xs-7 col-xs-12')
-        $('nav.second').toggleClass('header-full')
+        $('nav.first').toggleClass('col-xs-12')
+        $('nav.second').toggleClass('center')        
+        $('.nav-list.secondary').toggleClass('animate-nav')
+       // $('.logo-sec .logo img').toggleClass('animate-logo')
+        $('.nav-list.secondary').toggleClass('header-full')
     });
+
     //Animation Trigger
     function reveal(selector, animation, elementVisiability) {
         var reveals = document.querySelectorAll(selector);
