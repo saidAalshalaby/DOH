@@ -23,8 +23,7 @@ $(document).ready(function () {
     $('.rate i').click(function () {
 
         $(this).toggleClass('active-star');
-        let index = $(this).index();
-        console.log($('.rate i').index(index + 1).attr('class'));
+        
 
     });
 
